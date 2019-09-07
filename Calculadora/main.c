@@ -15,15 +15,11 @@ int main()
 {
 
 
-    char continuar;
     int numero1;
     int numero2;
     int flag1=0;
     int flag2=0;
-    int num1;
-    int num2;
-
-
+    char continuar;
 
 
     do {
@@ -50,15 +46,19 @@ int main()
 
 
         switch(menu()){
-            system("cls");
+
             case '1':
+                system("cls");
                 printf("Ingrese el primer numero: ");
+                fflush(stdin);
                 scanf("%d", &numero1);
                 flag1=1;
                 break;
 
             case '2':
+                system("cls");
                 printf("Ingrese el segundo numero: ");
+                fflush(stdin);
                 scanf("%d", &numero2);
                 flag2=1;
                 break;
@@ -66,7 +66,7 @@ int main()
             case 'a':
                 if (flag1==1 && flag2==1){
 
-                    printf("El resultado de la suma es %d", suma(num1, num2));
+                    printf("El resultado de la suma es %d\n", suma(numero1, numero2));
 
                 }else{
 
@@ -77,9 +77,10 @@ int main()
                 break;
 
             case 'b':
+
                 if (flag1==1 && flag2 ==1) {
 
-                    printf("El resultado de la multiplicacion es %d\n", multiplicacion(num1, num2));
+                    printf("El resultado de la multiplicacion es %d\n", multiplicacion(numero1, numero2));
 
                 }else{
 
@@ -93,7 +94,7 @@ int main()
             case 'c':
                 if (flag1==1 && flag2==1){
 
-                    printf("El resultado de la resta es %d\n", resta(num1, num2));
+                    printf("El resultado de la resta es %d\n", resta(numero1, numero2));
 
                 }else {
 
@@ -106,9 +107,9 @@ int main()
             case 'd':
                 if (flag1==1 && flag2==1){
 
-                    printf("El resultado de la division es %.2f\n", division(num1, num2));
+                    printf("El resultado de la division es %.2f\n", division(numero1, numero2));
 
-                }else if (num2==0){
+                }else if (numero2==0){
 
                     printf("No esta permitida la division por cero\n");
 
@@ -120,19 +121,30 @@ int main()
                 break;
 
             case 'e':
-                if (flag1==1 && flag2==1){
+                if (flag1==1){
 
-                   printf("El factorial del primer numnero es %d, y el del segundo es %d\n ", factorial(numero1), factorial(numero2));
+                    printf("El factorial del primero numero es %d\n", factorial(numero1));
 
-                }else{
+                    }else {
 
-                    printf("Mal, los dos numeros deben ser ingresados para realizar la operacion\n");
+                    printf("No se ha ingresado el primer numero\n");
 
-                }
-                system("pause");
-                break;
+                    }
 
-            case 's':
+                 if (flag2==1){
+
+                    printf("El factorial del segundo numero es %d\n", factorial(numero2));
+
+                 }else{
+
+                    printf("No se ha ingresado el segundo numero\n");
+
+                 }
+                 system("pause");
+                 break;
+
+            case 'f':
+                exit(0);
                 break;
 
             default :
@@ -141,6 +153,11 @@ int main()
                 break;
 
         }
+
+        printf("Si desea continuar, presione s\n");
+        fflush(stdin);
+        scanf("%c", &continuar);
+        system("cls");
 
 
     }while(continuar='s');
@@ -152,14 +169,14 @@ char menu(){
 
     int opcion;
 
-    printf("<Presione '1'> Ingrese el primer operando\n");
-    printf("<Presione '2'> Ingrese el segundo operando\n");
-    printf("Suma <Ingrese 'a'>\n");
-    printf("Multiplicacion <Ingrese 'b'>\n");
-    printf("Resta <Ingrese 'c'>\n");
-    printf("Division <Ingrese 'd'>\n");
-    printf("Factorial <Ingrese 'e'>\n");
-    printf("Salir <Ingrese 's'>\n");
+    printf("<Presione 1> Ingrese el primer operando\n");
+    printf("<Presione 2> Ingrese el segundo operando\n");
+    printf("Suma <Ingrese a>\n");
+    printf("Multiplicacion <Ingrese b>\n");
+    printf("Resta <Ingrese c>\n");
+    printf("Division <Ingrese d>\n");
+    printf("Factorial <Ingrese e>\n");
+    printf("Salir <Ingrese f>\n");
     printf("Ingrese opcion:\n");
     fflush(stdin);
     opcion=getchar();
@@ -206,22 +223,20 @@ float division(float num1, float num2){
 
 
 
-int factorial (int num1){
+int factorial(int num1){
 
-    int respuesta=1;
+    int resultado = 1;
     int i;
-
 
     for(i=num1; i>=1; i--){
 
-        respuesta=respuesta*i;
-
+        resultado=resultado*i;
     }
+    return resultado;
 
-    return respuesta;
 
- }
 
+}
 
 
 

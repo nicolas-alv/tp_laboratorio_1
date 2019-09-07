@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1567859189 source:c:\users\nico\desktop\codeblocks\calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+

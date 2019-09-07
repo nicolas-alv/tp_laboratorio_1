@@ -31,13 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="alvarez.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="alvarez.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="math.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="math.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

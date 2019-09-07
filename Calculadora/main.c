@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-#include "math.h"
+#include "alvarez.h"
 
 int main()
 {
@@ -9,6 +9,7 @@ int main()
     int numero2;
     int flag1=0;
     int flag2=0;
+    int result;
     char continuar;
 
     do {
@@ -94,25 +95,27 @@ int main()
                 break;
 
             case 'd':
-                if (flag1==1 && flag2==1){
+                if (flag1==0 || flag2==0){
 
-                    printf("El resultado de la division es %.2f\n", division(numero1, numero2));
+                    printf("Mal, los dos numeros deben ser ingresados para realizar la operacion\n");
 
-                }else if (numero2==0){
+                }else if (numero1==0 || numero2==0){
 
-                    printf("No esta permitida la division por cero\n");
+                    printf("Error\n");
+
 
                 }else{
 
-                    printf("Mal, los dos numeros deben ser ingresados para realizar la operacion\n");
+                    printf("El resultado de la division es %.2f\n", division(numero1, numero2));
+
                 }
                 system("pause");
                 break;
 
             case 'e':
                 if (flag1==1){
-
-                    printf("El factorial del primero numero es %d\n", factorial(numero1));
+                    result=factorial(numero1);
+                    printf("El factorial del primero numero es %d\n", result);
 
                     }else {
 
@@ -121,8 +124,8 @@ int main()
                     }
 
                  if (flag2==1){
-
-                    printf("El factorial del segundo numero es %d\n", factorial(numero2));
+                    result=factorial(numero2);
+                    printf("El factorial del segundo numero es %d\n", result);
 
                  }else{
 
@@ -150,6 +153,7 @@ int main()
 
 
     }while(continuar='s');
+
 
     return 0;
 }

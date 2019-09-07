@@ -17,3 +17,15 @@
 
 1567869598 c:\users\alumno\downloads\tp_laboratorio_1-master\tp_laboratorio_1-master\calculadora\math.h
 
+1567877369 source:c:\users\nico\desktop\tp_laboratorio_1-master\calculadora\alvarez.c
+	<stdio.h>
+	<stdlib.h>
+
+1567877684 source:c:\users\nico\desktop\tp_laboratorio_1-master\calculadora\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	"alvarez.h"
+
+1567877791 c:\users\nico\desktop\tp_laboratorio_1-master\calculadora\alvarez.h
+
